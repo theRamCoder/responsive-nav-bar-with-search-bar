@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+nav {
+  height: 60px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(0, 0, 100);
+  color: white;
+}
+.burger {
+  display: none;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.links {
+  width: 50%;
+  font-size: 1.2rem;
+}
+.links ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+.links ul li {
+  cursor: pointer;
+  position: relative;
+}
+.links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s ease;
+}
+.links ul li:hover::after {
+  width: 80%;
+}
+.search {
+  background-color: rgb(47, 47, 153);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.search input {
+  width: 100px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+.search .fa-search {
+  font-size: 1.2rem;
+}
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    transition: 0.2s ease;
+  }
+  .fa {
+    transition: 0.3s ease;
+  }
+  .links {
+    display: none;
+  }
+  .links-active {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    background-color: rgb(0, 0, 100);
+  }
+  .links-active ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+  }
+  .links-active ul li {
+    cursor: pointer;
+    position: relative;
+  }
+  .links-active ul li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s ease;
+  }
+  .links-active ul li:hover::after {
+    width: 80%;
+  }
+}
